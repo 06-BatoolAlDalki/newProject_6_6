@@ -1,0 +1,257 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UsersInadminDashboard.aspx.cs" Inherits="RoomToRead.UsersInadminDashboard" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+       <script src="Scripts/sweetalert.min.js"></script>
+    <link href="Styles/sweetalert.css" rel="stylesheet" />
+ <link rel="stylesheet" href="AdminCss/vendors/ti-icons/css/themify-icons.css"/>
+  <link rel="stylesheet" href="AdminCss/vendors/base/vendor.bundle.base.css"/>
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="AdminCss/css/style.css"/>
+  <!-- endinject -->
+  <link rel="shortcut icon" href="AdminCss/images/favicon.png" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+        <style type="text/css">
+        
+      
+        #buttons{
+            display:flex;
+            justify-content:center;
+            margin:5%;
+        }
+        
+.container1{
+    position:relative;
+}
+.left{
+    width:15%;
+    height:700px;
+    background-color:#49796b;
+    position:absolute;
+}
+.right{
+     width:85%;
+    height:150px;
+    background-color:#49796b;
+    position:absolute;
+    float:right;
+    /*border:3px solid black;*/
+    left:15%;
+}
+.center{
+     width:85%;
+    height:940px;
+   /* background-color:gray;*/
+    position:absolute;
+    float:right;
+   /* border:3px solid black;*/
+    left:15%;
+    top:150px;
+    background-color:	#eeeeee;
+   /*background-image: url('img/back1.jpg');*/
+  /* background-repeat:no-repeat;*/
+   /*background-size:contain;*/
+  
+}
+
+            
+.table tr td{
+    font-size:1.5rem;
+}
+.auto-style1{
+    width:100%;
+}
+            .auto-style2 {
+                width: 100%;
+                text-align: left;
+            }
+          
+             .nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color:#b2d3c2 !important;
+}
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+               <div>
+               <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="Images/batool1.png" class="mr-2" alt="logo" style="height: 65px; width: 65px;"/></a>
+        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/Logo.png" alt="logo"  style="height: 60px; width: 60px;"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="ti-view-list"></span>
+        </button>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="ti-view-list"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper" style="padding-top:0px !important">
+      <!-- partial:../../partials/_sidebar.html -->
+      
+        
+      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #1C5E55;" >
+        <ul class="nav ">
+        
+          <li class="nav-item a">
+            <a class="nav-link a" href="Admin_category.aspx">
+              <i class="fa-solid fa-clipboard-list a" style="font-size: 20px;"></i>
+              <span class="menu-title a" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp;Category</span>
+            </a>
+          </li>
+          <li class="nav-item a">
+            <a class="nav-link" href="request_Books_Admin.aspx">
+              <i class="fa-solid fa-book" style="font-size: 20px;"></i>
+              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Books</span>
+            </a>
+          </li>
+        
+          <li class="nav-item a">
+            <a class="nav-link" href="UsersInadminDashboard.aspx">
+              <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Users</span>
+            </a>
+          </li>
+             <li class="nav-item a">
+                <a class="nav-link" ID="A1"  runat="server"  href="chartNew.aspx">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Statistics</span>
+             </a>
+          </li>
+
+
+            <li class="nav-item a">
+                <a class="nav-link" ID="LinkButton1"  runat="server">
+              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
+              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Logout</span>
+             </a>
+          </li>
+
+
+        </ul>
+      </nav>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h2 style="    text-align: center; font-size: xx-large; color:#49796b ; font-family:'Times New Roman'">Users</h2>
+                    <br />
+                  
+                  <div class="table-responsive">
+       
+                     
+                      </div>
+                    </div>
+                  </div>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="
+SELECT U.id ,phoneNumber,Email,C.city_name, firstname, lastname, user_image , user_address,
+A.Name FROM AspNetUsers AS U JOIN AspNetUserRoles AS R ON U.Id=R.UserId JOIN AspNetRoles AS A ON A.Id=R.RoleId 
+join city As C on U.city_id=C.city_id where A.id=2;
+"></asp:SqlDataSource>
+        </div>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT U.Id, U.PhoneNumber, U.Email, C.city_name, U.firstname, U.lastname, U.user_image, U.birthofdate, U.user_address, A.Name FROM AspNetUsers AS U INNER JOIN AspNetUserRoles AS R ON U.Id = R.UserId INNER JOIN AspNetRoles AS A ON A.Id = R.RoleId INNER JOIN city AS C ON U.city_id = C.city_id WHERE (A.Id = 3)"></asp:SqlDataSource>
+        <div class="auto-style1" id="buttons">
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Bieneficiaries" CssClass="btn btn-primary" style="background-color:#49796b" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Donatories" CssClass="btn btn-primary" style="background-color:#49796b" />
+            <br />
+            <br />
+            <br />
+        </div>
+                
+                            <asp:MultiView ID="MultiView2" runat="server" ActiveViewIndex="1">
+            <asp:View ID="View3" runat="server">
+                <div class="auto-style2">
+                    <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2" OnSelectedIndexChanged="GridView4_SelectedIndexChanged" cssClass="table table-responsive table-hover table-striped" CellPadding="4" ForeColor="#333333" GridLines="None">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns   >
+                            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                            <asp:BoundField DataField="firstname" HeaderText="First Name" SortExpression="firstname" />
+                            <asp:BoundField DataField="lastname" HeaderText="Last Name" SortExpression="lastname" />
+                            <asp:BoundField DataField="PhoneNumber" HeaderText="Phone Number" SortExpression="PhoneNumber" />
+                            <asp:BoundField DataField="city_name" HeaderText="City" SortExpression="city_name" />
+                            <asp:TemplateField HeaderText="Picture" SortExpression="user_image">
+                                <EditItemTemplate>
+                                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("user_image") %>' width="100px" Height="100px"/>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="user_address" HeaderText="Address" SortExpression="user_address" />
+                            <asp:BoundField DataField="Name" HeaderText="Role" SortExpression="Name" />
+                            <asp:HyperLinkField DataNavigateUrlFields="id" DataNavigateUrlFormatString="deleteuseradmin?id={0}" Text="Delete" HeaderText="Delete" />
+                            <asp:HyperLinkField DataNavigateUrlFields="id" DataNavigateUrlFormatString="user_editbyadmin?id={0}" Text="Edit" HeaderText="Edit" />
+                        </Columns>
+                        <EditRowStyle BackColor="#7C6F57" />
+                        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#E3EAEB" />
+                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                        <SortedAscendingHeaderStyle BackColor="#246B61" />
+                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                        <SortedDescendingHeaderStyle BackColor="#15524A" />
+                    </asp:GridView>
+                </div>
+            </asp:View>
+            <asp:View ID="View2" runat="server">
+                <div class="text-sm-left" style="width:100%">
+                    <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" cssClass="table table-responsive table-hover table-striped" DataKeyNames="id" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView4_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                            <asp:BoundField DataField="firstname" HeaderText="First Name" SortExpression="firstname" />
+                            <asp:BoundField DataField="lastname" HeaderText="Last Name" SortExpression="lastname" />
+                            <asp:BoundField DataField="phoneNumber" HeaderText="Phone Number" SortExpression="phoneNumber" />
+                            <asp:BoundField DataField="city_name" HeaderText="City" SortExpression="city_name" />
+                            <asp:TemplateField HeaderText="Picture" SortExpression="user_image">
+                                <EditItemTemplate>
+                                    <asp:FileUpload ID="FileUpload2" runat="server" />
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Image ID="Image2" runat="server" Height="60px" ImageUrl='<%# Eval("user_image") %>' width="100px" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="user_address" HeaderText="Address" SortExpression="user_address" />
+                            <asp:BoundField DataField="Name" HeaderText="Role" SortExpression="Name" />
+                            <asp:HyperLinkField DataNavigateUrlFields="id" DataNavigateUrlFormatString="deleteuseradmin?id={0}" HeaderText="Delete" Text="Delete" />
+                            <asp:HyperLinkField DataNavigateUrlFields="id" DataNavigateUrlFormatString="user_editbyadmin?id={0}" HeaderText="Edit" Text="Edit" />
+                        </Columns>
+                        <EditRowStyle BackColor="#7C6F57" />
+                        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#E3EAEB" />
+                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                        <SortedAscendingHeaderStyle BackColor="#246B61" />
+                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                        <SortedDescendingHeaderStyle BackColor="#15524A" />
+                    </asp:GridView>
+                </div>
+            </asp:View>
+        </asp:MultiView>
+                </div>
+              </div>
+                
+            </div>
+        
+        </div>
+    </form>
+</body>
+</html>
+

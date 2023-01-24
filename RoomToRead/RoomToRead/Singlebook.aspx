@@ -12,119 +12,23 @@
         ul li a {
             color:#fff !important;
         }
-
+        body{
+            background-image:url('img/R6.jfif');
+            background-repeat:no-repeat;
+            background-size:cover;
+          
+        }
     </style>
 </head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+<body  >
+    
+        
+       <form id="form1" runat="server">
 
+    
+    
 
-    <style>
-        body
-        { background-image: url('img/book0.jpg');
-          width:100%;
-          background-repeat:no-repeat;
-          background-size:cover;
-        }
-      .card{border: none;overflow: hidden}
-      .thumbnail_images ul
-      {list-style: none;
-       justify-content: center;
-       display: flex;
-       align-items: center;
-       margin-top:10px}
-      .thumbnail_images ul li
-      {margin: 5px;
-       padding: 10px;
-       border: 2px solid #eee;
-       cursor: pointer;
-       transition: all 0.5s}
-      .thumbnail_images ul li:hover
-      {border: 2px solid #000}
-      .main_image
-      {display: flex;
-       height: 400px;
-       width: 100%;
-       overflow: hidden
-            
-      }
-      .heart{
-          height: 29px;
-          width: 29px;
-          background-color: #eaeaea;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center}
-      .content p{font-size: 12px}
-      .ratings span{font-size: 14px;margin-left: 12px}
-      .colors{margin-top: 5px}
-      .colors ul{list-style: none;display: flex;padding-left: 0px}
-      .colors ul li{height: 20px;width: 20px;display: flex;border-radius: 50%;margin-right: 10px;cursor: pointer}
-     
-      .right-side{position: relative}
-      .search-option
-      {position: absolute;
-       background-color: #000;
-       overflow: hidden;
-       align-items: center;
-       color: #fff;
-       width: 200px;
-       height: 200px;
-       border-radius: 49% 51% 50% 50% / 68% 69% 31% 32%;
-       left: 30%;
-       bottom: -250px;
-       transition: all 0.5s;
-       cursor: pointer}
-      .search-option .first-search
-      {position: absolute;top: 20px;left: 90px;font-size: 20px;opacity: 1000}
-      .search-option .inputs
-      {opacity: 0;transition: all 0.5s ease;transition-delay: 0.5s;position: relative}
-      .search-option .inputs input
-      {position: absolute;
-       top: 200px;
-       left: 30px;
-       padding-left: 20px;
-       background-color: transparent;
-       width: 300px;
-       border: none;
-       color: #fff;
-       border-bottom: 1px solid #eee;
-       transition: all 0.5s;
-       z-index: 10}
-      .search-option .inputs input:focus
-      {box-shadow: none;
-       outline: none;
-       z-index: 10}
-      .search-option:hover
-      {border-radius: 0px;
-       width: 100%;
-       left: 0px}
-      .search-option:hover .inputs{opacity: 1}
-      .search-option:hover .first-search{left: 27px;top: 25px;font-size: 15px}
-      .search-option:hover .inputs input{top: 20px}
-      .search-option .share{position: absolute;right: 20px;top: 22px}
-      .buttons .btn
-      {height: 50px;
-       width: 150px;
-      color:white;
-       background-color:#49796b;
- border: 2px solid #49796b;
-  padding: 10px;
-  border-radius: 2em / 5em; }
-      .col-md-6{
-          margin-left:5%;
-      }
-   </style>
-
-         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RoomToReadConnectionString %>" SelectCommand="SELECT [book_name], [Book_description], [Book_image] FROM [books] WHERE ([book_id] = @book_id)">
-             <SelectParameters>
-                 <asp:QueryStringParameter Name="book_id" QueryStringField="id" Type="Int32" />
-             </SelectParameters>
-         </asp:SqlDataSource>
-                                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="Repeater1_ItemCommand">
-<ItemTemplate>
+      
     <nav class="navbar navbar-expand-lg " style="background-color:#45B08E">
 <div class="container-fluid">
   <a class="navbar-brand" href="Home.aspx"><img style="width:50px; height:50px" src="Images/Navlogo.png" /></a>
@@ -138,11 +42,11 @@
         <a class="nav-link mx-2 active" aria-current="page" href="Home.aspx">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mx-2" href="#">Category</a>
+        <a class="nav-link mx-2" href="Category.aspx">Category</a>
       </li>
     
           <li class="nav-item"><a class="nav-link mx-2" href="AboutUs.aspx">About Us</a></li>
-          <li class="nav-item"><a class="nav-link mx-2" href="#">Contact us</a></li>
+          <li class="nav-item"><a class="nav-link mx-2" href="ContactUs.aspx">Contact us</a></li>
             <li class="nav-item">
         <a class="nav-link mx-2" id="LogIn" runat="server" href="LoginPage.aspx">Login</a>
       </li>
@@ -158,69 +62,68 @@
   </div>
 </div>
 </nav>
-        <div>
-            <div class="container mt-5 mb-5">	
-                <div class="card">	<div class="row g-0">	
-                    <div class="col-md-6 border-end" >	
-                        <div class="d-flex flex-column justify-content-center" >	
-                            <div class="main_image">	
-                             
-                               
-                                
-                             
-                         <asp:Image ID="main_product_image" runat="server" ImageUrl='<%#Eval("Book_image")%>' Width="400px" Height="300px" Style="border-radius:7px;margin-left:15%;margin-top:10%;"/>
 
-                            </div>	
+    
+<%--       <%#Eval("Book_image")%>--%>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RoomToReadConnectionString %>" SelectCommand="SELECT [Book_description], [book_name], [Book_image], [author] FROM [books] WHERE ([book_id] = @book_id)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="book_id" QueryStringField="id" Type="Int32" />
+            </SelectParameters>
+         </asp:SqlDataSource>
+                                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="Repeater1_ItemCommand">
+<ItemTemplate>
+       <div style=" width:80%; height:500px ; position:relative; margin-top:5%;margin-left:10%; border-radius:12px;  margin-bottom:5% " >
+         
+             <asp:Image ID="main_product_image" runat="server" ImageUrl='<%#Eval("Book_image")%>' Width="40%" Height="400px"  style="display:inline-block ; margin-top:50px ; margin-left:50px; border-radius:9px"/>
+           <div style="width:40%; height:400px ;position:absolute; left:55% ; display:inline-block ;margin-top:50px;border-radius:12px; border:3px solid #45B08E  ">
+               <br />
+               <br />
+               <br />
+               <asp:Label ID="Label1" runat="server" Text="Book Name :" style="font-size:x-large; font-weight:bold; font-family:'Times New Roman';font-style:italic;color:#45B08E ; margin-left:10% ; margin-top:40%">
 
-                        </div>
+               </asp:Label>
+                <asp:Label ID="Label2" runat="server" Text='<%#Eval("book_name")%>' ></asp:Label>
+               <br />
+               <br />
+                <asp:Label ID="Label3" runat="server" Text="Book Descrition :" style="font-size:x-large; font-weight:bold; font-family:'Times New Roman';font-style:italic;color:#45B08E ; margin-left:10% ; margin-top:40%">
 
-                    </div>
-                    <div class="col-md-6" style="margin-left:55%">
-                        <div class="p-3 right-side">	
-                        <div class="d-flex justify-content-between align-items-center">
-                           <h3 Style ="font-weight:bold;color:#3E2E2E;font-style:italic" >Book Name</h3>
-                        <asp:Label ID="Label1" runat="server" Text="" Style="font-size:xx-large;font-weight:bold;color:#49796b;font-style:italic"><%#Eval("book_name")%></asp:Label>
+               </asp:Label>
+                <asp:Label ID="Label4" runat="server" Text='<%#Eval("Book_description")%>' ></asp:Label>
+               <br />
+               <br />
+                <asp:Label ID="Label5" runat="server" Text="Book Author :" style="font-size:x-large; font-weight:bold; font-family:'Times New Roman';font-style:italic;color:#45B08E ; margin-left:10% ; margin-top:40%">
 
+               </asp:Label>
+                <asp:Label ID="Label6" runat="server" Text='<%#Eval("author")%>' ></asp:Label>
+               <br />
+               <br />
+               <br />
+               <br />
 
-                        </div>	
-                        <div class="mt-2 pr-3 content">
-                        <h3 Style ="font-weight:bold;color:#3E2E2E;font-style:italic">Description</h3>
-                         <asp:Label ID="Label2" runat="server" Text="" Style="font-size:x-large;font-weight:bold;color:#49796b;;font-style:italic" ><%#Eval("Book_description")%></asp:Label>
-                            <br />
-                            <p style="font-size:larger;color:#49796b;">We hope you use us every time you search for a book.</p>
-
-                        </div>	
-                     
-                        <div class="buttons d-flex flex-row mt-5 gap-3">	
-                            <asp:Button class="btn btn-outline-dark" ID="Button2" runat="server" Text="Back" />
-                            <asp:Button OnClick="RequestBook" class="btn btn-dark" ID="Button1" runat="server" Text="Book Request" />
-
-                        </div>	
-                        <div class="search-option">	
-                            <i class='bx bx-search-alt-2 first-search'></i>	
-                            <div class="inputs">
-                                <input type="text" name="">	
-
-                            </div>	
-                            <i class='bx bx-share-alt share'></i>
+                <div  style=" margin-left:10%">	
+                            <asp:Button  ID="Button2" runat="server" Text="Back" style="background-color:#49796b ; padding:10px ; border-radius:12px ;color:white ; border:none" />
+                            <asp:Button OnClick="RequestBook"  ID="Button1" runat="server" Text="Book Request" style="background-color:#49796b;margin-left:20px ;padding:10px ;border-radius:12px ;color:white ; border:none" />
 
                         </div>	
+      
+           </div>
+       </div>
+    
+                 </ItemTemplate>
+             </asp:Repeater>
+       <%--<asp:Image runat="server" ImageUrl="img\single.jpg" Width="40%" Height="400px" style="margin:5% ; border-radius:12px ; display:inline-block" ></asp:Image>
 
-                                          	</div>
 
-                    </div>	
-                                  	</div>	
-
-                </div>
-
-            </div>
-        </div>
-    </ItemTemplate>
-        </asp:Repeater>
-</body>
+       <div style="display:inline-block; background-color:aqua; width:30% ;height:400px;margin:5% "> </div>--%>
+       <br />
+      
+       </form>
+       <br />
+    <br />
+       </body>
 </html>
 
-        </div>
+       
           <footer 
           class="text-center text-lg-start text-dark"
           style="background-color: #45B08E;"
@@ -332,6 +235,4 @@
     <!-- Copyright -->
   </footer>
 
-    </form>
-</body>
-</html>
+   

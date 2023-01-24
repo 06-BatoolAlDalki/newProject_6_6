@@ -27,11 +27,11 @@ namespace RoomToRead
                     while (reader.Read())
                     {
                         Label1.Text +=
-                            "<div class=\"book read\">" +
-                            $"<div class=\"cover\"><img src='{reader[8]}'>" +
+                            "<div class=\"book read\" style='box-shadow: 2px  5px  10px 10px #49796b; border-radius:12px'>" +
+                            $"<div class=\"cover\" style='width:100%;margin-right:10%' ><img src='{reader[8]}'>" +
                             $"</div><div class=\"description\"><p class=\"title\">{reader[4]}<br>" +
                             $"<p class=\"parentdiv\"><span class=\"author\">author:{reader[9]}</span></p>" +
-                            $"<p><a href =\"Singlebook.aspx?id={reader[0]}\" class=\"btn btn-info\">See More Details</a></p>" +
+                            $"<p><a href =\"Singlebook.aspx?id={reader[0]}\" class=\"btn btn-info\" style='background-color:#49796b;color:white'>See More Details</a></p>" +
                             "</div></div>";
                     }
                     Label1.Text += "</div>";

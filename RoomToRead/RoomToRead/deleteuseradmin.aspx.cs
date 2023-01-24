@@ -30,8 +30,10 @@ namespace RoomToRead
             }
             catch (Exception ex)
             {
-                Response.Write("You Can't  Delete this donater because he has a book");
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
             }
+
 
         }
     }

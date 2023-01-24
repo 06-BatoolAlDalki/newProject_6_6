@@ -41,7 +41,7 @@
       </li>
     
           <li class="nav-item"><a class="nav-link mx-2" href="AboutUs.aspx">About Us</a></li>
-          <li class="nav-item"><a class="nav-link mx-2" href="#">Contact us</a></li>
+          <li class="nav-item"><a class="nav-link mx-2" href="ContactUs.aspx">Contact us</a></li>
             <li class="nav-item">
         <a class="nav-link mx-2" id="LogIn" runat="server" href="LoginPage.aspx">Login</a>
       </li>

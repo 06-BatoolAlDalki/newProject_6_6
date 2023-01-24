@@ -54,7 +54,7 @@ namespace RoomToRead
             string folderpath = Server.MapPath("Images/");
             FileUpload1.SaveAs(folderpath + Path.GetFileName(FileUpload1.FileName));
 
-            string query = $"update AspNetUsers set PhoneNumber=@Phone, firstname=@firstname,lastname=@lastName,user_address=@Address,city_id={City.SelectedValue},user_Image='{FileUpload1.FileName}' where id='{id}';";
+            string query = $"update AspNetUsers set PhoneNumber=@Phone, firstname=@firstname,lastname=@lastName,user_address=@Address,city_id={City.SelectedValue},user_Image='Images/{Path.GetFileName(FileUpload1.FileName)}' where id='{id}';";
             SqlCommand insetPersonalInfo = new SqlCommand(query, Con);
             insetPersonalInfo.Parameters.AddWithValue("@Phone", Phone.Text);
             insetPersonalInfo.Parameters.AddWithValue("@firstName", firstName.Text);

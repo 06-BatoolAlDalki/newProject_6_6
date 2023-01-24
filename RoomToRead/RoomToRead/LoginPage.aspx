@@ -74,7 +74,7 @@
 				
 				</div>
 
-				<div class="login100-more" style="background-image: url('images/volunteer-group-donates-old-books-newspapers-poor-students_701961-1521.jpg');">
+				<div class="login100-more" style="background-image: url('imgg/6721752.jpg');">
 				</div>
 			</div>
 		</div>

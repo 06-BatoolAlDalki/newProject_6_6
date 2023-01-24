@@ -1,7 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_category.aspx.cs" Inherits="RoomToRead.dashboard" %>
 
+
+<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_category.aspx.cs" Inherits="RoomToRead.dashboard" %>--%>
+
 <!DOCTYPE html>
 <style>
+   
     .container{
        padding-top:0px !important;
     }
@@ -14,12 +18,162 @@
   <link rel="stylesheet" href="AdminCss/vendors/base/vendor.bundle.base.css"/>
   <!-- endinject -->
   <!-- inject:css -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
   <link rel="stylesheet" href="AdminCss/css/style.css"/>
   <!-- endinject -->
   <link rel="shortcut icon" href="AdminCss/images/favicon.png" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
 <style>
-   /* #add{
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    .wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+.headertitle{
+  
+   
+}
+#GridView1{
+    
+}
+.section{
+    display:none;
+}
+    @media screen and (min-width:1100px) {
+         .con{
+        width:83%;
+        margin-left:16%;
+    }
+    }
+@media screen and (min-width:0px) and (max-width:1100px) {
+    .section{
+        display: block;
+        
+    }
+
+ .headertitle{
+  width: 100%;
+  height: 50px;
+  margin-left: 0%;
+  display: flex;
+  padding-top:0.5%;
+  background-color: #2ac89b;
+  justify-content: center;
+  font-size:x-large;
+}
+}
+.wrapper .sidebar .profile img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p{
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+}
+body.active .wrapper .sidebar{
+    left: -225px;
+}
+
+body.active .wrapper .section{
+    margin-left: 0;
+    width: 100%;
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background: #f5f6fa;
+}
+
+.wrapper .sidebar{
+    background:#49796b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+.wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #49796b;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+}
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color:#49796b;
+
+    background:white;
+    border-right: 2px solid #49796b;
+}
+.wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    background: #49796b;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+    color: #2ac89b;
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #49796b;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+
+
+    #add{
         margin-top:6%;
     }
     #editAnddelete{
@@ -29,105 +183,145 @@
     }
     #GridView1{
         font-size:2rem;
-    }*/
+    }
     .table tr td{
         font-size:1.5rem;
     }
+    ul li{
+      width:103%;
+      margin-left:-3%;
+    }
+    .headertitle{
+  background-color:#b2d3c2;
+  width:87%;
+  margin-left:13%;
+  justify-content:center;
+  align-items:center;
+  font-size:x-large;
+  font-weight:bold;
+  margin-bottom:1.5%;
+  
+   
+}
+    .headertitle h3 {
+        text-align: center;
+        height: 65px;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: x-large;
+    }
+    @media screen and (min-width:0px) and (max-width:1100px) {
+    .section{
+        display: block;
 
-     .nav > li > a:hover, .nav > li > a:focus {
-    text-decoration: none;
-    background-color:#b2d3c2 !important;
+    }
+
+ .headertitle{
+  width: 100%;
+  height: 50px;
+  margin-left: 0%;
+  display: flex;
+  padding-top:0.5%;
+  background-color:#b2d3c2;;
+  justify-content: center;
+  font-size:x-large;
+}
 }
 </style>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-               <!-- partial:../../partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="Images/batool1.png" class="mr-2" alt="logo" style="height: 65px; width: 65px;"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/Logo.png" alt="logo"  style="height: 60px; width: 60px;"/></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="ti-view-list"></span>
-        </button>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="ti-view-list"></span>
-        </button>
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper" style="padding-top:0px !important">
-      <!-- partial:../../partials/_sidebar.html -->
-      
+ <div>
+            <div class="wrapper">
+        <!--Top menu -->
         
-      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #1C5E55;" >
-        <ul class="nav ">
-        
-          <li class="nav-item a">
-            <a class="nav-link a" href="Admin_category.aspx">
-              <i class="fa-solid fa-clipboard-list a" style="font-size: 20px;"></i>
-              <span class="menu-title a" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp;Category</span>
-            </a>
-          </li>
-          <li class="nav-item a">
-            <a class="nav-link" href="request_Books_Admin.aspx">
-              <i class="fa-solid fa-book" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Books</span>
-            </a>
-          </li>
-        
-          <li class="nav-item a">
-            <a class="nav-link" href="UsersInadminDashboard.aspx">
-              <i class="fa-solid fa-user" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Users</span>
-            </a>
-          </li>
+        <div class="sidebar">
+           <!--profile image & text-->   
+           <div class="profile">
+               <img src="Images/Nav.png" />
+            <h3>Room to Read</h3>
+        </div>
 
-             <li class="nav-item a">
-                <a class="nav-link" ID="A1"  runat="server"  href="chartNew.aspx">
-              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Statistics</span>
-             </a>
-          </li>
+ <ul>
+                <li>
+                <a href="request_Books_Admin.aspx" >
+                    <span class="icon">
+                        <i class="fa fa-book"></i>
+                                        
+                    </span>
+                    <span class="item">Books</span>
+                </a>
+            </li>
 
-            <li class="nav-item a">
-                <a class="nav-link" ID="LinkButton1"  runat="server">
-              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Logout</span>
-             </a>
-          </li>
+            <li>
+                <a href="Admin_category.aspx" class="active">
+                    <span class="icon">
+                        <i class="fa fa-briefcase"></i>
+                                        
+                    </span>
+                    <span class="item" >Category</span>
+                </a>
+            </li>
 
-
+            <li>
+                <a href="UsersInadminDashboard.aspx">
+                    <span class="icon"><i class="fas fa-user-friends"></i></span>
+                    <span class="item">Users</span>
+                </a>
+            </li>
+            
+          
+            <li>
+                <a href="chartNew.aspx">
+                    <span class="icon"><i class="fa fa-chart-line"></i></span>
+                    <span class="item">statistics</span>
+                </a>
+            </li>
+                <li>
+                <a href="AdminOneTimeDono.aspx"  >
+                    <span class="icon">
+                        <i class="fa fa-briefcase"></i>                                   
+                    </span>
+                    <span class="item" style="font-size:14px" >One-Time Donations</span>
+                </a>
+            </li>
+            <li>
+              <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">
+                    <span class="icon"><i class="fa fa-power-off" aria-hidden="true"></i></span>
+                    <span class="item">Log out</span>
+                </asp:LinkButton>
+            </li>
         </ul>
-      </nav>
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h2 style="    text-align: center; font-size: xx-large; color:#49796b ; font-family:'Times New Roman'">Categories</h2>
-                    <br />
-                  
-                  <div class="table-responsive">
-       
-                      
-        
-                   <%-- Header text --%>                           
-
-                  
-                  
-                  </div>
-
-                </div>
-              </div>
-                
+    </div>
+    <div class="section" >
+        <div class="top_navbar">
+            <div class="hamburger">
+                <a href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
             </div>
-                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RoomToReadConnectionString %>" DeleteCommand="DELETE FROM [category] WHERE [category_id] = @category_id" InsertCommand="INSERT INTO [category] ([category_description], [category_name], [catergoy_image]) VALUES (@category_description, @category_name, @catergoy_image)" SelectCommand="SELECT * FROM [category]" UpdateCommand="UPDATE [category] SET [category_description] = @category_description, [category_name] = @category_name, [catergoy_image] = @catergoy_image WHERE [category_id] = @category_id">
+        </div>
+
+    </div>
+            <!--menu item-->
+        </div>
+        <div class="headertitle">
+                <h3>Category</h3>
+        </div>
+
+        </div>
+    
+   <main>
+
+  <div class="con">
+      
+      <i class="fa-solid fa-sort"></i>
+
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="DELETE FROM [category] WHERE [category_id] = @category_id" InsertCommand="INSERT INTO [category] ([category_description], [category_name], [catergoy_image], [status12], [update12]) VALUES (@category_description, @category_name, @catergoy_image, @status12, @update12)" SelectCommand="SELECT * FROM [category]" UpdateCommand="UPDATE [category] SET [category_description] = @category_description, [category_name] = @category_name, [catergoy_image] = @catergoy_image, [status12] = @status12, [update12] = @update12 WHERE [category_id] = @category_id">
                    <DeleteParameters>
                        <asp:Parameter Name="category_id" Type="Int32" />
                    </DeleteParameters>
@@ -135,11 +329,15 @@
                        <asp:Parameter Name="category_description" Type="String" />
                        <asp:Parameter Name="category_name" Type="String" />
                        <asp:Parameter Name="catergoy_image" Type="String" />
+                       <asp:Parameter Name="status12" Type="String" />
+                       <asp:Parameter Name="update12" Type="String" />
                    </InsertParameters>
                    <UpdateParameters>
                        <asp:Parameter Name="category_description" Type="String" />
                        <asp:Parameter Name="category_name" Type="String" />
                        <asp:Parameter Name="catergoy_image" Type="String" />
+                       <asp:Parameter Name="status12" Type="String" />
+                       <asp:Parameter Name="update12" Type="String" />
                        <asp:Parameter Name="category_id" Type="Int32" />
                    </UpdateParameters>
                </asp:SqlDataSource>
@@ -148,7 +346,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Button3" runat="server" Text="Edit and Delete Category" OnClick="Button3_Click"  style="background-color:#49796b ; color:white ;border:2px solid #49796b ; border-radius:12px 12px ;padding:10px" />
                 <br />
-                <div runat="server" visible="false" id="add" style="margin-left:30% ; border:2px solid #45B08E ; padding-left:42px; width:30% ; border-radius:3px 12px ;padding-top:33px;padding-bottom:13px">
+              <br />
+              <br />
+                <div runat="server" visible="false" id="add" style="margin-left:35% ;margin-top:3%; border:2px solid #45B08E ; padding-left:42px; width:30% ; border-radius:12px 12px ;padding-top:33px;padding-bottom:13px">
                   <asp:Label ID="Label4" runat="server" Text="Add Category" Style="font-weight:bold ; font-style:italic ;margin-left:15% ;" ></asp:Label>
               <br />
                     <br /><asp:Label ID="Label3" runat="server" Text="Category name :" Style="font-weight:bold ; font-style:italic"></asp:Label>
@@ -166,17 +366,42 @@
                
               
                 <br />
-&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" style="background-color:#49796b ; color:white ;border:2px solid #49796b ; border-radius:12px 12px ;padding:10px ;margin-left:30%"  />
-                       
+&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" style="background-color:#49796b ; color:white ;border:2px solid #49796b ; border-radius:12px 12px ;padding:10px ;width:30%"  />
+                            
                     <br />
                        
                     </div>
-                <div id="editAnddelete" runat="server" visible="false" style="width:100%" >
-                &nbsp;<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+                <div id="editAnddelete" runat="server" visible="false" class="w-100" >
+                    <br />
+                    <br />
+
+                &nbsp;<asp:Label ID="Label5" runat="server" Text="Search of Category Name " style="margin-left:30%;font-size:large;font-weight:bold; color:#1C5E55 ;font-family:'Times New Roman'"></asp:Label>
+             
+                    <asp:TextBox ID="TextBox6" runat="server" AutoPostBack="True" OnTextChanged="TextBox6_TextChanged" placeholder="Category Name"  style="margin-left:1%"  ></asp:TextBox>
+&nbsp;&nbsp;
+                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="DELETE FROM [category] WHERE [category_id] = @category_id" InsertCommand="INSERT INTO [category] ([category_description], [category_name], [catergoy_image]) VALUES (@category_description, @category_name, @catergoy_image)" SelectCommand="SELECT * FROM [category] WHERE ([category_name] LIKE '%' + @category_name + '%')" UpdateCommand="UPDATE [category] SET [category_description] = @category_description, [category_name] = @category_name, [catergoy_image] = @catergoy_image WHERE [category_id] = @category_id">
+                        <DeleteParameters>
+                            <asp:Parameter Name="category_id" Type="Int32" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="category_description" Type="String" />
+                            <asp:Parameter Name="category_name" Type="String" />
+                            <asp:Parameter Name="catergoy_image" Type="String" />
+                        </InsertParameters>
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="TextBox6" Name="category_name" PropertyName="Text" Type="String" />
+                        </SelectParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="category_description" Type="String" />
+                            <asp:Parameter Name="category_name" Type="String" />
+                            <asp:Parameter Name="catergoy_image" Type="String" />
+                            <asp:Parameter Name="category_id" Type="Int32" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
     
                     <br />
                     <br />
-                    <asp:TextBox ID="TextBox5" runat="server" style="margin-left:33%" Visible="false"></asp:TextBox>
+                    <asp:TextBox ID="TextBox5" runat="server" style="place-itemsmargin-left:33%" Visible="false"></asp:TextBox>
                     <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Button" visible="false" />
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="DELETE FROM [category] WHERE [category_id] = @category_id" InsertCommand="INSERT INTO [category] ([category_id], [category_description], [category_name], [catergoy_image]) VALUES (@category_id, @category_description, @category_name, @catergoy_image)" SelectCommand="SELECT * FROM [category] WHERE ([category_name] LIKE '%' + @category_name2 + '%')" UpdateCommand="UPDATE [category] SET [category_description] = @category_description, [category_name] = @category_name, [catergoy_image] = @catergoy_image WHERE [category_id] = @category_id">
                         <DeleteParameters>
@@ -199,13 +424,22 @@
                         </UpdateParameters>
                     </asp:SqlDataSource>
 
-                    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="category_id" DataSourceID="SqlDataSource2" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" CssClass="table table-striped ;    " CellPadding="4" ForeColor="#333333" GridLines="None" >
+               <%--<asp:Button ID="Button5" runat="server"  Text="Show Category" style="background-color:#49796b ; color:white ;border:2px solid #49796b ; border-radius:12px 12px ;padding:10px ;margin-left:5%;width:44%" OnClick="Button5_Click"  />--%>
+                            
+                    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="category_id" DataSourceID="SqlDataSource3" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" CssClass="table table-striped ;    " CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" AllowSorting="True" OnRowDeleting="GridView2_RowDeleting" >
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:BoundField DataField="category_id" HeaderText="category_id" ReadOnly="True" SortExpression="category_id" />
-                            <asp:BoundField DataField="category_description" HeaderText="category_description" SortExpression="category_description" />
-                            <asp:BoundField DataField="category_name" HeaderText="category_name" SortExpression="category_name" />
-                            <asp:BoundField DataField="catergoy_image" HeaderText="catergoy_image" SortExpression="catergoy_image" />
+                            <asp:BoundField DataField="category_id"  HeaderText="Id <i class='fa-solid fa-sort'></i> "  ReadOnly="True" SortExpression="category_id" InsertVisible="False" />
+                            <asp:BoundField DataField="category_description" HeaderText="Description" SortExpression="category_description" />
+                            <asp:BoundField DataField="category_name" HeaderText="Name" SortExpression="category_name" />
+                            <asp:TemplateField HeaderText="Image" SortExpression="catergoy_image">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("catergoy_image") %>'></asp:TextBox>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Image ID="Image2" runat="server" ImageUrl='<%# Eval("catergoy_image") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
                         </Columns>
                         <EditRowStyle BackColor="#7C6F57" />
                         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -220,24 +454,32 @@
                     </asp:GridView>
     
 
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="category_id" DataSourceID="SqlDataSource1" OnRowUpdating="GridView1_RowUpdating" ForeColor="#333333" OnRowDeleting="GridView1_RowDeleting" CssClass="table table-striped" OnRowUpdated="GridView1_RowUpdated" OnRowDeleted="GridView1_RowDeleted" GridLines="None"   >
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="category_id" DataSourceID="SqlDataSource1" OnRowUpdating="GridView1_RowUpdating" ForeColor="#333333" OnRowDeleting="GridView1_RowDeleting" CssClass="table table-striped" OnRowUpdated="GridView1_RowUpdated" OnRowDeleted="GridView1_RowDeleted" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"   >
                         <AlternatingRowStyle BackColor="White" />
                    <Columns> 
-                       <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                       <asp:BoundField DataField="category_id" HeaderText=" Id" SortExpression="category_id" InsertVisible="False" ReadOnly="True" />
+                       <asp:TemplateField HeaderText=" Id" InsertVisible="False" SortExpression="category_id">
+                           <EditItemTemplate>
+                               <asp:Label ID="Label1" runat="server" Text='<%# Eval("category_id") %>'></asp:Label>
+                           </EditItemTemplate>
+                           <ItemTemplate>
+                               <asp:Label ID="Label1" runat="server" Text='<%# Bind("category_id") %>'></asp:Label>
+                           </ItemTemplate>
+                       </asp:TemplateField>
                        <asp:BoundField DataField="category_name" HeaderText=" Name" SortExpression="category_name" />
                        <asp:BoundField DataField="category_description" HeaderText="Description" SortExpression="category_description" />
                        <asp:TemplateField HeaderText=" Image" SortExpression="catergoy_image">
                            
                            <EditItemTemplate>
-                               <asp:FileUpload ID="FileUpload3" runat="server" />
                                <asp:Label ID="Label6" runat="server" Text='<%# Eval("catergoy_image") %>' Visible="False"></asp:Label>
+                               <asp:FileUpload ID="FileUpload4" runat="server" />
                            </EditItemTemplate>
                            
                            <ItemTemplate>
                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("catergoy_image")%>' Width="100px" Height="60px"  />
                            </ItemTemplate>
                        </asp:TemplateField>
+                       <asp:CommandField ShowEditButton="True" />
+                       <asp:HyperLinkField DataNavigateUrlFields="category_id" DataNavigateUrlFormatString="magic12.aspx?id={0}" Text="Delete" />
                    </Columns>
                         <EditRowStyle BackColor="#7C6F57" />
                    <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -251,14 +493,19 @@
                    <SortedDescendingHeaderStyle BackColor="#15524A" />
                </asp:GridView>
                                    
+                           </div>
+       </div>
+   </main>
+   
 
-          </div>
-        </div>
-         </div>
-        </div>        
+  <script>
 
-  </div>
-           <script src="AdminCss/vendors/base/vendor.bundle.base.js"></script>
+      var hamburger = document.querySelector(".hamburger");
+      hamburger.addEventListener("click", function () {
+          document.querySelector("body").classList.toggle("active");
+      })
+  </script>
+          <script src="AdminCss/vendors/base/vendor.bundle.base.js"></script>
 <script src="AdminCss/js/off-canvas.js"></script>
   <script src="AdminCss/js/hoverable-collapse.js"></script>
   <script src="AdminCss/js/template.js"></script>
@@ -289,8 +536,13 @@
                          type: 'success'
                      });
                  }
+                 jQuery("a").filter(function () {
+                     return this.innerHTML.indexOf("Delete") == 0;
+                 }).click(function () {
+                     return confirm("Are you sure you want to delete this category?");
+                 });
              </script>
-
+       
         </form>
     
 </body>

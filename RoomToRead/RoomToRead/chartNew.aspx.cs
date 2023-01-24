@@ -94,5 +94,14 @@ namespace RoomToRead
             //Label8.Text = Convert.ToString(ordinary + "%");
             Con.Close();
         }
+
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("LoginPage.aspx");
+
+        }
+
     }
 }

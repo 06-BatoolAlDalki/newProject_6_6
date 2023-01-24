@@ -24,11 +24,11 @@ namespace RoomToRead
             {
 
 
-                Label1.Text += "<div class=\"card\">" +
-                $"<img src='{reader[3]}' alt=\"Avatar\" style=\"width:100%\">" +
+                Label1.Text += "<div class=\"card\" style='box-shadow: 2px  2px  10px 10px #49796b;'>" +
+                $"<img src='{reader[3]}' alt=\"Avatar\" style=\"width:100%\" style='border-radius:12px' >" +
                 $"<div class=\"containerlabel2label1\">\r\n    <h4><b>{reader[2]}</b></h4>" +
                 $"<p>{reader[1]}</p>" +
-                $"<p><a href=\"SingleCategory.aspx?category_id={reader[0]}&category_name={reader[1]}\" class=\"btn btn-info\">See Books</a></p>" +
+                $"<p><a href=\"SingleCategory.aspx?category_id={reader[0]}&category_name={reader[1]}\" class=\"btn btn-info\" style='background-color:#49796b;color:white'>See Books</a></p>" +
                 "</div></div>";
 
             }

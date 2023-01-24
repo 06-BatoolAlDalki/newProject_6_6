@@ -51,6 +51,10 @@ namespace RoomToRead
                         int role = Convert.ToInt32(Dastination.ExecuteScalar());
                         if (role == 1)
                         { Response.Redirect("chartNew.aspx"); }
+                        else if(role==2)
+                        {
+                            Response.Redirect("UserProfile.aspx");
+                        }
                         else
                         {
                             if (!string.IsNullOrEmpty(Session["bookLink"] as string))

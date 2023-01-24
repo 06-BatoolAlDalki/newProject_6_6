@@ -40,7 +40,7 @@ border: none;
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <br /><br />
+    <br /><br />
             <div class="container-fluid">
       <div class="row" style="margin: 0px 20px">
          <div class="col-md-12 col-sm-8 col-8 col-lg-4">
@@ -78,7 +78,8 @@ border: none;
                      <div class="col-md-6">
                         <label> Full Name</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control "  class="text-success" ID ="TextBox1" runat="server"  ></asp:TextBox>
+                            <asp:Label ID="Label6" runat="server" class="text-success" Text=""></asp:Label>
+                          <%-- <asp:TextBox CssClass="form-control "  class="text-success" ID ="TextBox1" runat="server"  ></asp:TextBox>--%>
                         </div>
                      </div>
                     <%-- <div class="col-md-6">
@@ -93,13 +94,15 @@ border: none;
                      <div class="col-md-6">
                         <label> phone</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" ></asp:TextBox>
+                            <asp:Label ID="Label3" runat="server" class="text-success" Text=""></asp:Label>
+                         <%--  <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" ></asp:TextBox>--%>
                         </div>
                      </div>
                      <div class="col-md-6">
                         <label>Email ID</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Email ID" TextMode="Email"></asp:TextBox>
+                            <asp:Label ID="Label4" runat="server" class="text-success" Text=""></asp:Label>
+                    <%--       <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Email ID" TextMode="Email"></asp:TextBox>--%>
                         </div>
                      </div>
                   </div>
@@ -107,12 +110,13 @@ border: none;
                      <div class="col-md-12">
                         <label>Address</label>
                         <div class="form-group">
-                           <asp:TextBox  class="form-control" ID="TextBox6" runat="server" placeholder="City"></asp:TextBox>
+                            <asp:Label ID="Label5" runat="server" class="text-success" Text=""></asp:Label>
+                          <%-- <asp:TextBox  class="form-control" ID="TextBox6" runat="server" placeholder="City"></asp:TextBox>--%>
                         </div>
                      </div>
                      <hr />
                      <div class="col-md-12">
-                        <label>Address</label>
+                        <label>City</label>
                         <div class="form-group">
                             <asp:Label runat="server" ID="cityName"></asp:Label>
                         </div>
@@ -122,7 +126,7 @@ border: none;
                      <div class="col-lg-7 mx-auto col-sm-10 col-md-10">
                         <center>
                            <div class="form-group">
-                               <asp:Button class="btn btn-success btn-block btn-md" ID="Button2" runat="server" Text="Edit Profil" OnClick="Button2_Click1" />
+                               <asp:Button class="btn btn-success btn-block btn-md" ID="Button2" runat="server" Text="Edit Profile" OnClick="Button2_Click1" />
                            
                            </div>
                         </center>
@@ -134,7 +138,7 @@ border: none;
 
                </div>
             </div>
-            <a href="homepage.aspx"><< Back to Home</a><br><br>
+            <br><br>
          </div>
 
 
@@ -144,13 +148,13 @@ border: none;
              
                                          <div class="container" >
                                              
-                                             <img style="width:750px ;height:370px ; margin:20px !important" src="imgg\\45.jpg"/>
+                                             <img style="width:700px ;height:370px;margin-left:12px  !important" src="imgg\\45.jpg"/>
                                               
                                                <div class="row">
-                     <div class="col media-right " style="margin:10px 680px!important">
+                     <div class="col media-right " style="margin:10px 600px!important">
                         <center>
-                           <div class="form-group">
-                               <asp:Button  class=" mi btn btn-success btn-block btn-md" ID="Button3" runat="server" Text="Donate" OnClick="Button3_Click1" />
+                           <div   >
+                               <asp:Button  class=" mi btn btn-success btn-block btn-md" ID="Button3" runat="server" Text="Donate" OnClick="Button3_Click1"  />
                            
                            </div>
                         </center>
@@ -187,9 +191,10 @@ border: none;
                          <%--/     ----------------------------------              /--%>
 
                          <div class="col">
-                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [book_Name], [Category_id], [Book_Image], [donating_date] FROM [Books] WHERE ([User_id] = @User_id)">
+                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Book_image], [donating_date], [book_name], [approve] FROM [books] WHERE (([approve] = @approve) AND ([user_id] = @user_id))">
                                  <SelectParameters>
-                                     <asp:SessionParameter Name="User_id" SessionField="userId" Type="String" />
+                                     <asp:Parameter Name="approve" DefaultValue="1" Type="Decimal" />
+                                     <asp:SessionParameter Name="user_id" SessionField="userId" Type="String" />
                                  </SelectParameters>
                              </asp:SqlDataSource>
         
@@ -217,7 +222,7 @@ border: none;
       <th scope="row">#</th>
       <td>  <asp:Label ID="Label1" runat="server" Text='<%#Eval("book_Name") %>'></asp:Label></td>
            <td> <asp:Label ID="Label2" runat="server" Text='<%#Eval("donating_date") %>'></asp:Label></td>
-     <td> <asp:Image style="width:50px; height:70px ;" ID="Image1" runat="server" src='<%#Eval("Book_Image") %>' /></td>
+     <td> <asp:Image style="width:50px; height:70px ;" ID="Image1"  runat="server"  ImageUrl='<%#Eval("Book_image") %>' /></td>
     </tr>
        
     </tbody>

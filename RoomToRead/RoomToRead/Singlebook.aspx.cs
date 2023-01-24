@@ -14,7 +14,14 @@ namespace RoomToRead
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            if (!string.IsNullOrEmpty(Session["userId"] as string))
+
+            {
+                UserProfile.Visible = true;
+                LogOut.Visible = true;
+                LogIn.Visible = false;
+
+            }
         }
 
         protected void RequestBook(object sender, EventArgs e)

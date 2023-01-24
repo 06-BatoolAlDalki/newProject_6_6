@@ -1,15 +1,14 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="user_editbyadmin.aspx.cs" Inherits="RoomToRead.user_editbyadmin" %>
 
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-
-
-    <link href="Styles/sweetalert.css" rel="stylesheet" />
-    <script src="Scripts/sweetalert.min.js"></script>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
   <style>
     body {
     margin: 0;
@@ -19,6 +18,154 @@
     position: relative;
     height: 100%;
 }
+           @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    .wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+.headertitle{
+  
+    
+}
+.section{
+    display:none;
+}
+   @media screen and (min-width:1100px) {
+         .con{
+        width:83%;
+        margin-left:16%;
+        height:100%;
+        display:flex;
+        padding-top:10%;
+    }
+    }
+@media screen and (min-width:0px) and (max-width:1100px) {
+    .section{
+        display: block;
+
+    }
+
+ .headertitle{
+  width: 100%;
+  height: 50px;
+  margin-left: 0%;
+  display: flex;
+  padding-top:0.5%;
+  background-color: #2ac89b;
+  justify-content: center;
+  font-size:x-large;
+}
+}
+.wrapper .sidebar .profile img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p{
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+}
+body.active .wrapper .sidebar{
+    left: -225px;
+}
+
+body.active .wrapper .section{
+    margin-left: 0;
+    width: 100%;
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background: #f5f6fa;
+}
+
+.wrapper .sidebar{
+    background:#49796b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+.wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #49796b;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+}
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color:#49796b;
+
+    background:white;
+    border-right: 2px solid #49796b;
+}
+.wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    background: #49796b;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+    color: #2ac89b;
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #49796b;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+
+
 .account-settings .user-profile {
     margin: 0 0 1rem 0;
     padding-bottom: 1rem;
@@ -63,6 +210,7 @@
     background: #ffffff;
     color: #2e323c;
 }
+
 .card {
     background: #ffffff;
     -webkit-border-radius: 5px;
@@ -72,11 +220,48 @@
     margin-bottom: 1rem;
 }
 
- .nav > li > a:hover, .nav > li > a:focus {
-    text-decoration: none;
-    background-color:#b2d3c2 !important;
+    ul li{
+     width: 109%;
+    margin-left: -9%;
+    }
+    .headertitle{
+  background-color:#b2d3c2;
+  width:87%;
+  margin-left:13%;
+  justify-content:center;
+  align-items:center;
+  font-size:x-large;
+  font-weight:bold;
+  
+   
 }
+    .headertitle h3 {
+        text-align: center;
+        height: 65px;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: x-large;
+    }
+    @media screen and (min-width:0px) and (max-width:1100px) {
+        .section {
+            display: block;
+        }
 
+        .headertitle {
+            width: 100%;
+            height: 50px;
+            margin-left: 0%;
+            display: flex;
+            padding-top: 0.5%;
+            background-color: #b2d3c2;
+            justify-content: center;
+            font-size: x-large;
+            margin-bottom:3%;
+        }
+    }
   </style>
         <script src="Scripts/sweetalert.min.js"></script>
     <link href="Styles/sweetalert.css" rel="stylesheet" />
@@ -91,84 +276,90 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-                <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="../../images/Logo.png" class="mr-2" alt="logo" style="height: 65px; width: 65px;"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/Logo.png" alt="logo"  style="height: 60px; width: 60px;"/></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="ti-view-list"></span>
-        </button>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="ti-view-list"></span>
-        </button>
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper" style="padding-top:0px !important">
-      <!-- partial:../../partials/_sidebar.html -->
-      
-      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #1C5E55;" >
-        <ul class="nav ">
+
+      <div>
+                <div class="wrapper">
+        <!--Top menu -->
         
-          <li class="nav-item a">
-            <a class="nav-link a" href="Admin_category.aspx">
-              <i class="fa-solid fa-clipboard-list a" style="font-size: 20px;"></i>
-              <span class="menu-title a" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp;Category</span>
-            </a>
-          </li>
-          <li class="nav-item a">
-            <a class="nav-link" href="request_Books_Admin.aspx">
-              <i class="fa-solid fa-book" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Books</span>
-            </a>
-          </li>
-        
-          <li class="nav-item a">
-            <a class="nav-link" href="UsersInadminDashboard.aspx">
-              <i class="fa-solid fa-user" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Users</span>
-            </a>
-          </li>
+        <div class="sidebar">
+           <!--profile image & text-->   
+           <div class="profile">
+<img src="Images/Nav.png" />
+               <h3>Room to Read</h3>
+        </div>
 
-             <li class="nav-item a">
-                <a class="nav-link" ID="A1"  runat="server"  href="chartNew.aspx">
-              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Statistics</span>
-             </a>
-          </li>
+   
+        <ul>
+                <li>
+                <a href="Admin_Books.aspx">
+                    <span class="icon">
+                        <i class="fa fa-book"></i>
+                                        
+                    </span>
+                    <span class="item">Books</span>
+                </a>
+            </li>
 
-            <li class="nav-item a">
-                <a class="nav-link" ID="LinkButton1"  runat="server">
-              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Logout</span>
-             </a>
-          </li>
+            <li>
+                <a href="Admin_category.aspx">
+                    <span class="icon">
+                        <i class="fa fa-briefcase"></i>
+                                        
+                    </span>
+                    <span class="item">Category</span>
+                </a>
+            </li>
 
-
+            <li>
+                <a href="UsersInadminDashboard.aspx" class="active">
+                    <span class="icon"><i class="fas fa-user-friends"></i></span>
+                    <span class="item">Users</span>
+                </a>
+            </li>
+            
+          
+            <li>
+                <a href="chartNew.aspx">
+                    <span class="icon"><i class="fa fa-chart-line"></i></span>
+                    <span class="item">statistics</span>
+                </a>
+            </li>
+             
+            <li>
+              <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">
+                    <span class="icon"><i class="fa fa-power-off" aria-hidden="true"></i></span>
+                    <span class="item">Log out</span>
+                </asp:LinkButton>
+            </li>
         </ul>
-      </nav>
 
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h2 style="    text-align: center; font-size: xx-large; color:#49796b ; font-family:'Times New Roman'">User Profile</h2>
-                    <br />
+    </div>
+    <div class="section" >
+        <div class="top_navbar">
+            <div class="hamburger">
+                <a href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+            <!--menu item-->
+        </div>
+        <div class="headertitle">
+                <h3>User Profile</h3>
+        </div>
+
+        </div>
+        <main>
+             <div class="con">
+      
+
                   
-                  <div class="table-responsive">
-       
-                     
-                      </div>
-                    
+                  
              
 
-                  <div class="container" style="width:96%" >
+                  <div class="container">
 <div class="row gutters">
 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
 <div class="card h-100">
@@ -184,7 +375,7 @@
 				
 			</div>
 			<div class="text-right">
-                <asp:FileUpload ID="FileUpload1" runat="server" accept=".png,.jpg,.jpeg,.gif" />
+                <asp:FileUpload ID="FileUpload1" runat="server" accept=".png,.jpg,.jpeg,.gif"   />
 
 			</div>
 		</div>
@@ -248,18 +439,20 @@
 			<%--<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="Street">Address</label>
+
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="ciTy">City</label>
+
 				</div>--%>
 		
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 		<div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="text-right">
-                 <asp:Button ID="addedit" cssclass="btn btn-primary" OnClick="addedit_Click"  runat="server" Text="Update" style="background-color:#49796b" />
+                 <asp:Button ID="addedit" cssclass="btn btn-primary" OnClick="addedit_Click"  runat="server" Text="Update"  style="background-color:#49796b ; color:white ;border:2px solid #49796b ; border-radius:12px 12px ;padding:10px"/>
 
 				</div>
 			</div>
@@ -269,28 +462,62 @@
 </div>
 </div>
 </div>
+</div>
 
-
-                          </div>
               </div>
-                
-            </div>
+            </main>
         
-        </div>
-        </div>
+             <script>
+
+                 var hamburger = document.querySelector(".hamburger");
+                 hamburger.addEventListener("click", function () {
+                     document.querySelector("body").classList.toggle("active");
+                 })
+             </script>
+          <script src="AdminCss/vendors/base/vendor.bundle.base.js"></script>
+<script src="AdminCss/js/off-canvas.js"></script>
+  <script src="AdminCss/js/hoverable-collapse.js"></script>
+  <script src="AdminCss/js/template.js"></script>
+  <script src="AdminCss/js/todolist.js"></script>
+
+
 
              <script type="text/javascript">
-                
+                 function successalert() {
+                     swal({
+                         title: 'Perfect Working',
+                         text: 'Your Category has been succesfully added',
+                         type: 'success'
+                     });
+                 }
 
                  function successaler() {
                      swal({
                          title: 'Perfect Working',
-                         text: 'Your Book has been succesfully deleted',
+                         text: 'Your Category has been succesfully deleted',
                          type: 'success'
                      });
                  }
-                
+                 function successale() {
+                     swal({
+                         title: 'Perfect Working',
+                         text: 'Your Category has been succesfully updated',
+                         type: 'success'
+                     });
+                 }
+                 window.setTimeout(function () {
+                     window.location.href = 'UsersInadminDashboard.aspx';;
+                 }, 5000);
              </script>
+        <script>
+            function ShowMessage() {
+                //alert('You cannot delete a user because he took/Donate a book before');
+                successale();
+                setTimeout();
+
+            }
+        </script>
+          
     </form>
 </body>
 </html>

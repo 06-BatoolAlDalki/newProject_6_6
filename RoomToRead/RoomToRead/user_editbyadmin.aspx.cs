@@ -91,20 +91,16 @@ namespace RoomToRead
             string query = $"update AspNetUsers set PhoneNumber='{PhoneNumber.Text}',Email='{Email.Text}',firstname='{FirstName.Text}',lastname='{LastName.Text}',user_address='{Address.Text}',city_id={City.SelectedValue},user_image='{image1}' where id='{id}'";
             SqlCommand command = new SqlCommand(query, Con);
             command.ExecuteNonQuery();
-          //  string name1 = Session["name"].ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
+
             Con.Close();
-            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successaler();", true);
-
-            Thread.Sleep(3000);
-
-            Response.Redirect("UsersInadminDashboard.aspx");
-            
 
 
-
-           
-
-
+        }
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("LoginPage.aspx");
 
         }
     }

@@ -38,13 +38,13 @@
 justify-content: center;">
   <img id="mainImage" src="images/ezgif.com-gif-maker-removebg-preview.png"/>
 </div>    
-<div class="contents order-2 order-md-1">
+<div class="contents order-2 order-md-1" style="border-radius:12px">
 
-      <div class="container">
+      <div class="container" >
         <div class="row align-items-center justify-content-center">
           <div class="col-md-6">
             <div class="form-block">
-              <div class="text-center mb-5">
+              <div class="text-center mb-5" >
               <h3>Register</h3>
                   
               </div>
@@ -92,7 +92,7 @@ justify-content: center;">
                     CssClass="text-danger" ErrorMessage="The Image field is required." />
                     </div>
 
-                <asp:Button ID="Button2" class="btn " style="float: right; color:  white; background-color: #45B08E;" OnClick="Register" runat="server" Text="Register" />
+                <asp:Button ID="Button2" class="btn " style="margin-bottom:22px; color:  white; background-color: #45B08E;" OnClick="Register" runat="server" Text="Register" />
                 </asp:PlaceHolder>
 <%--                End of personal Info--%>
                     <asp:PlaceHolder ID="PlaceHolder1" runat="server">
@@ -133,7 +133,7 @@ justify-content: center;">
                 <div class="d-sm-flex mb-5 align-items-center">
                   <span class="ml-auto"><a href="LoginPage.aspx" class="forgot-pass">Have an account? Login</a></span> 
                 </div>
-                <asp:Button ID="Button1" class="btn " style="float: right; color:  white; background-color: #45B08E;" OnClick="CreateUser_Click" runat="server" Text="Next" />
+                <asp:Button ID="Button1" class="btn " style="margin-bottom:20px; color:  white; background-color: #45B08E;" OnClick="CreateUser_Click" runat="server" Text="Next" />
                 </asp:PlaceHolder>
             </div>
                

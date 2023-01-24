@@ -30,7 +30,7 @@ namespace RoomToRead
                 SqlCommand citycommand = new SqlCommand($"select city_name from city where city_id ={cityid}", con2);
                 string cityname = citycommand.ExecuteScalar().ToString();
                 cityName.Text = cityname;
-                if (role == 2)
+                if (role == 2 )
                 {
                     tag.Text = "Donor";
                     your.InnerText = "Your Donated books";
@@ -58,11 +58,11 @@ namespace RoomToRead
 
                     //userContainer.InnerHtml = $"<div  > <span> email:{sdr[2]}</span> </div>";
                     //name1.InnerHtml = $"  {sdr[1]}";
-                    TextBox1.Text = $"  {sdr[12]}" + $"  {sdr[13]}";
+                    Label6.Text = $"  {sdr[12]}" + $"  {sdr[13]}";
                     img.InnerHtml = $" <img class=\"rounded-circle img-fluid shadow p-2 mb-3 bg-#f6d365 rounded\"  style=\"width: 170px ; height:170px\"  ;   border: solid 8px #F24726!important\";  src='{sdr[14]}' /> ";
-                    TextBox4.Text = $"{sdr[1]}";
-                    TextBox6.Text = $"{sdr[15]}";
-                    TextBox3.Text = $"{sdr[5]}";
+                    Label4.Text = $"{sdr[1]}";
+                    Label5.Text = $"{sdr[15]}";
+                    Label3.Text = $"{sdr[5]}";
 
                 }
                 con.Close();

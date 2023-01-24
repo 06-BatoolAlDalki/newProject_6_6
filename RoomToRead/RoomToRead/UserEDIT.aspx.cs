@@ -70,6 +70,9 @@ namespace RoomToRead
                     con.Close();
                 }
 
+
+                books.Visible = false;
+                Button3.Visible = false;
             }
 
 

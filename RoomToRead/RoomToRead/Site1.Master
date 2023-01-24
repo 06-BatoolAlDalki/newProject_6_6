@@ -38,7 +38,7 @@
       </li>
     
           <li class="nav-item"><a class="nav-link mx-2" href="AboutUs.aspx">About Us</a></li>
-          <li class="nav-item"><a class="nav-link mx-2" href="#">Contact us</a></li>
+          <li class="nav-item"><a class="nav-link mx-2" href="ContactUs.aspx">Contact us</a></li>
             <li class="nav-item">
         <a class="nav-link mx-2" id="LogIn" runat="server" href="LoginPage.aspx">Login</a>
       </li>
@@ -108,13 +108,13 @@
                 style="width: 60px; background-color: #7c4dff; height: 2px"
                 />
             <p>
-              <a href="qq.aspx" class="text-white">Donate with us</a>
+              <a href="OneTime.aspx" class="text-white">Donate with us</a>
             </p>
             <p>
               <a href="AboutUs.aspx" class="text-white">About us</a>
             </p>
             <p>
-              <a href="#!" class="text-white">Contact Us</a>
+              <a href="ContactUs.aspx" class="text-white">Contact Us</a>
             </p>
           </div>
           <!-- Grid column -->

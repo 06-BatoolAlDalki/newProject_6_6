@@ -25,11 +25,11 @@ namespace RoomToRead
                 string query = $"Delete from AspNetUsers where AspNetUsers.Id='{id}'";
                 SqlCommand rolecommand = new SqlCommand(query, Con);
                 rolecommand.ExecuteNonQuery();
-                Response.Redirect("users.aspx");
+                Response.Redirect("UsersInadminDashboard.aspx");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Response.Write("You Can't  Delete this donater because he has a book");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "key", "ShowMessage()", true);
             }
         }
     }

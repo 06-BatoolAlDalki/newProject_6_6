@@ -56,7 +56,8 @@
   .cover {
     
     height: 80%;
-    overflow: hidden;
+   
+   
   }
   .parentdiv{
       margin-top:5px;

@@ -35,7 +35,7 @@
       <div class="col-lg-6">
         <h1 class="display-4">About us</h1>
         <p class="lead text-muted mb-0">Our site was designed and made to serve readers who love to read but do not have the books they need or for students who cannot get a book</p>
-        <p class="lead text-muted" style="color:#49796b">Also we wish that everyone who can donate a book to write it here and don't hesitate <a href="https://bootstrapious.com/snippets" class="text-muted"> 
+        <p class="lead text-muted" style="color:#49796b">Also we wish that everyone who can donate a book to write it here and don't hesitate <a href="OneTime.aspx" class="text-muted"> 
                     <u>Click here to donate</u></a>
         </p>
       </div>
@@ -49,7 +49,7 @@
     <div class="row align-items-center mb-5">
       <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
         <h2 class="font-weight-light">Our Book Categories:</h2>
-        <p class="font-italic text-muted mb-4" style="color:#49796b">1-Literary.<br />2-Scientific.<br />3-Self-development.<br />4-Philosophy.<br />5-Psychology.<br />6-Religious.<br />7-Historical.<br />8-Medical.<br />9-Astronomy</p><a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Learn More</a>
+        <p class="font-italic text-muted mb-4" style="color:#49796b">1-Literary.<br />2-Scientific.<br />3-Self-development.<br />4-Philosophy.<br />5-Psychology.<br />6-Religious.<br />7-Historical.<br />8-Medical.<br />9-Astronomy</p><a href="Category.aspx" class="btn btn-light px-5 rounded-pill shadow-sm">Show Categories.</a>
       </div>
       <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="img/book1.jpg" class="img-fluid mb-4 mb-lg-0"/></div>
     </div>

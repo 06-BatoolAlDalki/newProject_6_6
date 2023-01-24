@@ -2,8 +2,79 @@
 
 <!DOCTYPE html>
 
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <style>
+        .img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+        .navlinks{
+
+            color:white;
+
+
+        }
+        .cta
+
+{
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+     border-radius: 50px;
+    border: none;
+    background-color: white;
+}
+
+        .cta:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            border-radius: 50px;
+            background:#dff6ff ;
+            width: 100%;
+            height: 55px;
+           
+        }
+
+        .cta span {
+            position: relative;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+           
+            color: white;
+        }
+
+        .cta svg {
+            position: relative;
+            top: 0;
+            margin-left: 10px;
+            fill: none;
+            /*troke-linecap: round;
+            stroke-linejoin: round;*/
+            stroke: #DFF6FF;
+            stroke-width: 2;
+           
+        }
+
+        .cta:hover:before {
+            width: 100%;
+            background: #06283D;
+
+        }
+
+        .a{
+
+        }
+        .a:hover{
+             box-shadow: 2px  2px  10px 10px #49796b;
+        }
+    </style>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.js"></script>
         <meta charset="utf-8" />
@@ -23,45 +94,78 @@
     </head>
 <body id="page-top">
     <form id="form1" runat="server">
+    <nav class="navbar navbar-expand-lg navlinks" style="background-color:#45B08E">
+<div class="container-fluid">
+  <a class="navbar-brand" href="Home.aspx"><img style="width:50px; height:50px" src="Images/Navlogo.png" /></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ <span class="text-white me-4" style="font-size:medium"> Room To Read</span>
+  <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ms-auto ">
+      <li class="nav-item">
+        <a class="nav-link mx-2 active" aria-current="page" href="Home.aspx" style="color:white;font-size:medium">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link mx-2" href="#" style="color:white;font-size:medium">Category</a>
+      </li>
     
-    
-        <!-- Navigation-->
+          <li class="nav-item"><a class="nav-link mx-2" href="AboutUs.aspx" style="color:white;font-size:medium">About Us</a></li>
+          <li class="nav-item"><a class="nav-link mx-2" href="ContactUs.aspx" style="color:white; font-size:medium">Contact us</a></li>
+            <li class="nav-item">
+        <a class="nav-link mx-2" id="LogIn" runat="server" href="LoginPage.aspx" style="color:white;font-size:medium">Login</a>
+      </li>
+        <li class="nav-item">
+            <a Visible="false" id="UserProfile" runat="server" class="nav-link mx-2" href="UserProfile.aspx" style="color:white;font-size:medium">Profile</a>
+
+        </li>
+         <li class="nav-item">
+           <asp:LinkButton Visible="false" class="nav-link mx-2" ID="LogOut"  runat="server" style="color:white;font-weight:bold">Logout</asp:LinkButton>
+      </li>
+        
+    </ul>
+  </div>
+</div>
+</nav>
+
+<%--    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////--%>
+        <%--<!-- Navigation-->--%>
         
         <!-- Masthead-->
-        <header class="masthead ">
-            <div class="container carousel slide" id="carouselExampleCaptions"  data-bs-ride="carousel">
-              <%--  <div class="masthead-subheading">Welcome To Our Studio!</div>
-                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>--%>
-                <%--<a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>--%>
-
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="width:100% ; /*margin-left:-10% */;">
+       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="margin-top:-25px">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <%--  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>--%>
   </div>
-  <div class="carousel-inner">
+  <div class="carousel-inner" ">
     <div class="carousel-item active">
-      <img src="assets/img/book2.jpeg" class="d-block w-100" alt="..." style="height:500px" />
-      <div class="carousel-caption d-none d-md-block">
-     
-       
+      
+      <img src="assets\img\123.jpg" class="d-block w-100" alt="..." height="510px"  >
+      <div class="carousel-caption d-none d-md-block" style="margin-bottom:10% ; margin-left:39% ;font-size:x-large ;font-weight:bold;font-style:italic ;color:white">
+      
+        <p>If you love to donate,we offer space to you to share your Books .</p>
+         <asp:LinkButton ID="LinkButton1" runat="server" href="OneTime.aspx" >Donate Now</asp:LinkButton>
       </div>
+          
+         
+             
     </div>
     <div class="carousel-item">
-      <img src="assets/img/back6.jpg" class="d-block w-100" alt="..."  style="height:500px"/>
-      <div class="carousel-caption d-none d-md-block">
+      <img src="assets\img\00.jpg" class="d-block w-100" alt="..." height="510px">
+      <div class="carousel-caption d-none d-md-block" style="margin-bottom:10% ; margin-right:60% ; font-size:large ;font-weight:bold;font-style:italic ;color:black">
        
-       
+        <p>We eat to feed our body , we read to feed our brain.</p>
+          <asp:LinkButton ID="LinkButton2" runat="server" href="Category.aspx" >Find your Book</asp:LinkButton>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="assets/img/back10.jpg" class="d-block w-100" alt="..."  style="height:500px"/>
+   <%-- <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        
-       <%-- style="font-weight:bold ; font-size:large ; margin-bottom:32%"--%>
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
       </div>
-    </div>
+    </div>--%>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -71,38 +175,45 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
-
-            </div>
-        </header>
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container" style="margin-top:-8%">
                 <div class="text-center">
-                   <a href="Category.aspx"> <h2 class="section-heading text-uppercase"  style="color:black">Let's Go </h2></a> 
+             <%--      <a href="Category.aspx"> <h2 class="section-heading text-uppercase"  style="color:black">Let's Go </h2></a> --%>
                     <h2 class="section-heading text-uppercase"  style="color: #45B08E ">Services</h2>
                     <h3 class="section-subheading text-muted"> What we offer !</h3>
                 </div>
                 <div class="row text-center" style="color:#45B08E">
                     <div class="col-md-4" >
+                     <%--   <i class="fa-solid fa-book-open"></i>--%>
                         <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary" ></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse" ></i>
+                            <i class="fas fa-circle fa-stack-2x text-primary" style="color :#45B08E"></i>
+                            <i class="fas fa-book-open fa-stack-1x fa-inverse" style="color:#45B08E" ></i>
                         </span>
-                        <h4 class="my-3">E-Commerce</h4>
+                        <h4 class="my-3" >Free Books</h4>
                         <p class="text-muted">this website is design to offer books to all peole , we rely on social media with people . </p>
                     </div>
+               <%--     <i class="fa fa-handshake-o" aria-hidden="true"></i>--%>
+                   <%-- <i class="fa-solid fa-hand-holding-heart"></i>--%>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                            <i class="fas fa-circle fa-stack-2x text-primary" style="color:#45B08E"></i>
+                          <i class="fas fa-hand-holding-heart fa-stack-1x fa-inverse" style="color:#45B08E" ></i>
                         </span>
                         <h4 class="my-3">Free Donationg</h4>
                         <p class="text-muted">we offer Books in our website with out take any many from donator. Because we know the books is life.   </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                            <i class="fa-light fa-people-arrows"></i>
+                            <i class="fas fa-circle fa-stack-2x text-primary" style="color:#45B08E"></i>
+                            <i class="fas fa-handshake-o fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Collaborating Idea</h4>
                         <p class="text-muted">Cooperation is one of the most important qualities of a cohesive society, if we take one step which is to take books from a group of people to benefit people </div>
@@ -110,85 +221,29 @@
             </div>
         </section>
         <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="portfolio" >
-            <div class="container" >
-                <div class="text-center" >
-                    <h2 class="section-heading text-uppercase">Most Requested Book Categories </h2>
-                    <h3 class="section-subheading text-muted">Amazing Books.</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/rwayh.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Literature books</div>
-                                <div class="portfolio-caption-subheading text-muted">this is the most requested from this category</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 2-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/history.png" alt="..."style="height:360px"  />
-                            </a>
-                            <div class="portfolio-caption" style="height:60px">
-                                <div class="portfolio-caption-heading">History Books</div>
-                                <div class="portfolio-caption-subheading text-muted">this is the most requested from this category</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 3-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/science.png" alt="..." style="height:360px" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Scientific Books</div>
-                                <div class="portfolio-caption-subheading text-muted">this is the most requested from this category</div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                   
-                </div>
-            </div>
-        </section>
+        
         <!-- About-->
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">User Manual </h2>
+                    <h2 class="section-heading text-uppercase"> How to use our website. </h2>
                     <h3 class="section-subheading text-muted"> Breif about what you will do in our website. </h3>
                 </div>
                 <ul class="timeline">
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+                        <div class="timeline-image img a"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
                         <div class="timeline-panel">
-                            <div class="timeline-heading">
+                            <div class="timeline-heading" style="margin-top:10%">
                                 <h4>First step</h4>
                                 <h4 class="subheading">Browse Category and choose the right one </h4>
                             </div>
                             <div class="timeline-body"><p class="text-muted">we have multiple choices of books , so when you visit our website , you will see scientific Books , History Books , Litreture Books and Psychology and Self-Development   </p></div>
                         </div>
                     </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                    <li class="timeline-inverted" >
+                        <div class="timeline-image a" ><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..."  /></div>
                         <div class="timeline-panel">
-                            <div class="timeline-heading">
+                            <div class="timeline-heading" style="margin-top:10%">
                                 <h4>Second step</h4>
                                 <h4 class="subheading">Browse books and choose the right one</h4>
                             </div>
@@ -196,19 +251,19 @@
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
+                        <div class="timeline-image a"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
                         <div class="timeline-panel">
-                            <div class="timeline-heading">
+                            <div class="timeline-heading"style="margin-top:10%;">
                                 <h4>Third step</h4>
                                 <h4 class="subheading">Browse your favorite author.</h4>
                             </div>
                             <div class="timeline-body"><p class="text-muted">every book have multiple authors , so you need to choose your favorite author.</p></div>
                         </div>
                     </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
+                    <li class="timeline-inverted ">
+                        <div class="timeline-image a"><img class="rounded-circle img-fluid " src="assets/img/about/4.jpg" alt="..." /></div>
                         <div class="timeline-panel">
-                            <div class="timeline-heading">
+                            <div class="timeline-heading" style="margin-top:10%">
                                 <h4>Fourth Step </h4>
                                 <h4 class="subheading">Take your favorite Book </h4>
                             </div>
@@ -216,17 +271,17 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image">
+                        <div class="timeline-image a">
                             <h4>
                         We wish<br /> you an <br /> enjoyable reading 
                             </h4>
                         </div>
                     </li>
                      <li class="timeline-inverted">
-                        <div class="timeline-image">
+                        <div class="timeline-image a">
                             <h4>
                         
-                        <a href="Category.aspx"> <h2 class="section-heading text-uppercase"  style="color:black">Let's <br />Go </h2></a> 
+                        <a href="Category.aspx"> <h2 class="section-heading text-uppercase "  style="color:black">Let's <br />Go </h2></a> 
                             </h4>
                      
                         </div>
@@ -316,6 +371,7 @@
         <div class="py-5">
             <div class="container">
                 <div class="row align-items-center">
+                    <p style="text-align:center;font-size:xx-large;font-weight:bold">Sponsor</p>
                     <div class="col-md-3 col-sm-6 my-3">
                         <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
                     </div>
@@ -632,7 +688,119 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-         </div>
+
+        
+          <footer 
+          class="text-center text-lg-start text-dark"
+          style="background-color: #45B08E;"
+          >
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-between p-4 text-white" style="background-color: #45B08E">
+      <!-- Left -->
+      <div class="me-5">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="#" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="#" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold text-white">Room To Read</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p class="text-white">
+             Our site was designed and made to serve readers who love to read but do not have the books they need or for students who cannot get a book
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold text-white">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="qq.aspx" class="text-white">Donate with us</a>
+            </p>
+            <p>
+              <a href="AboutUs.aspx" class="text-white">About us</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Contact Us</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold text-white">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p class="text-white"><i class="fas fa-home mr-3"></i> Amman,Jordan</p>
+            <p class="text-white"><i class="fas fa-envelope mr-3"></i> RoomToRead@Gmail.com</p>
+            <p class="text-white"><i class="fas fa-phone mr-3"></i> +962 778095488</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3 text-white"
+         style="background-color: #45B08E"
+         >
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/"
+         >@CopyRight RoomToRead</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+
     </form>
 </body>
 </html>

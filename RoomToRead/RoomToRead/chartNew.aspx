@@ -5,8 +5,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   <style>
-      @import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+  
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+  
+  <style>
+    @import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
 
 /* Bootstrap Icons */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
@@ -18,139 +22,401 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
    
     
-    <script src="js/bootstrap.min.js"></script>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-   <script src="Scripts/sweetalert.min.js"></script>
-    <link href="Styles/sweetalert.css" rel="stylesheet" />
- <link rel="stylesheet" href="AdminCss/vendors/ti-icons/css/themify-icons.css"/>
-  <link rel="stylesheet" href="AdminCss/vendors/base/vendor.bundle.base.css"/>
-  <!-- endinject -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="AdminCss/css/style.css"/>
-  <!-- endinject -->
-  <link rel="shortcut icon" href="AdminCss/images/favicon.png" />
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-<style>
-    /*#add{*/
-/*        margin-top:6%;
-*/    /*}
-    .containergrid{
-        width:100%;
-        
-        margin-left:5%;
-    }
-    #editAnddelete{*/
-       /* width:80%;
-        margin-left:auto;
-        margin-right:auto;*/
-    /*}
-    #GridView1{
-        font-size:2rem;
-    }*/
-    .table tr td{
-        font-size:1.5rem;
-    }
-  /*  .a{
-
-    }
-    .a:hover{
- background-color:aquamarine;
-    }*/
-
-  .nav > li > a:hover, .nav > li > a:focus {
-    text-decoration: none;
-    background-color:#b2d3c2 !important;
+    <style>
+.container1{
+    position:relative;
 }
-</style></head>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+           .wrapper .sidebar{
+               z-index:10;
+           }
+    .wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+.headertitle{
+  
+    
+}
+.section{
+    display:none;
+}
+   @media screen and (min-width:1100px) {
+         .con{
+        width:83%;
+        margin-left:16%;
+    }
+    }
+   
+
+
+@media screen and (min-width:0px) and (max-width:1100px) {
+    .section{
+        display: block;
+
+    }
+
+ .headertitle{
+  width: 100%;
+  height: 50px;
+  margin-left: 0%;
+  display: flex;
+  padding-top:0.5%;
+  background-color: #2ac89b;
+  justify-content: center;
+  font-size:x-large;
+}
+}
+@media screen and (min-width:0px) and (max-width:500px) {
+    
+.wrapper .section{
+        margin-top: -37px;
+}
+              .wrapper   .sidebar{
+                     z-index:4;
+                 }
+       }
+
+.wrapper .sidebar .profile img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p{
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+}
+body.active .wrapper .sidebar{
+    left: -225px;
+}
+
+body.active .wrapper .section{
+    margin-left: 0;
+    width: 100%;
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background: #f5f6fa;
+}
+
+.wrapper .sidebar{
+    background:#49796b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+.wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #49796b;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+}
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color:#49796b;
+
+    background:white;
+    border-right: 2px solid #49796b;
+}
+.wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    background: #49796b;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+    color: #2ac89b;
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #49796b;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+
+
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #007ae1;
+}
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+.card {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
+.left{
+    width:15%;
+    height:700px;
+    background-color:#49796b;
+    position:absolute;
+}
+.right{
+     width:85%;
+    height:150px;
+    background-color:#49796b;
+    position:absolute;
+    float:right;
+    /*border:3px solid black;*/
+    left:15%;
+}
+.center{
+     width:85%;
+    height:940px;
+   /* background-color:gray;*/
+    position:absolute;
+    float:right;
+   /* border:3px solid black;*/
+    left:15%;
+    top:150px;
+   /* background-color:	#eeeeee;*/
+   /*background-image: url('img/back1.jpg');*/
+  /* background-repeat:no-repeat;*/
+   /*background-size:contain;*/
+  
+
+}
+ul li{
+     width: 109%;
+    margin-left: -9%;
+    }
+
+   @media screen and (min-width:0px) and (max-width:768px) {
+         #form1{
+                margin-top:-40px !important;
+       
+    }
+    }
+       .headertitle{
+  background-color:#b2d3c2;
+  width:87%;
+  margin-left:13%;
+  justify-content:center;
+  align-items:center;
+  font-size:x-large;
+  font-weight:bold;
+  
+   
+}
+    .headertitle h3 {
+        text-align: center;
+        height: 65px;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: x-large;
+    }
+    @media screen and (min-width:0px) and (max-width:1100px) {
+        .section {
+            display: block;
+        }
+
+        .headertitle {
+            width: 100%;
+            height: 50px;
+            margin-left: 0%;
+            display: flex;
+            padding-top: 0.5%;
+            background-color: #b2d3c2;
+            justify-content: center;
+            font-size: x-large;
+            margin-bottom:3%;
+        }
+    }
+        </style>
+
+</head>
 <body>
     <form id="form1" runat="server">
+     <div>
+                <div class="wrapper">
+        <!--Top menu -->
         
-               <!-- partial:../../partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="Images/batool1.png" class="mr-2" alt="logo" style="height: 65px; width: 65px;"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/Logo.png" alt="logo"  style="height: 60px; width: 60px;"/></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="ti-view-list"></span>
-        </button>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="ti-view-list"></span>
-        </button>
-      </div>
-    </nav>
-              <div class="container-fluid page-body-wrapper" style="padding-top:0px !important">
-      <!-- partial:../../partials/_sidebar.html -->
-      
-      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #1C5E55;" >
-        <ul class="nav ">
-        
-          <li class="nav-item a">
-            <a class="nav-link a" href="Admin_category.aspx">
-              <i class="fa-solid fa-clipboard-list a" style="font-size: 20px;"></i>
-              <span class="menu-title a" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp;Category</span>
-            </a>
-          </li>
-          <li class="nav-item a">
-            <a class="nav-link" href="request_Books_Admin.aspx">
-              <i class="fa-solid fa-book" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Books</span>
-            </a>
-          </li>
-        
-          <li class="nav-item a">
-            <a class="nav-link" href="UsersInadminDashboard.aspx">
-              <i class="fa-solid fa-user" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Users</span>
-            </a>
-          </li>
-             <li class="nav-item a">
-                <a class="nav-link" ID="A1"  runat="server"  href="chartNew.aspx">
-              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Statistics</span>
-             </a>
-          </li>
+        <div class="sidebar">
+           <!--profile image & text-->   
+           <div class="profile">
+               <img src="Images/Nav.png" />
+               <h3>Room to Read</h3>
+        </div>
 
-            <li class="nav-item a">
-                <a class="nav-link" ID="LinkButton1"  runat="server">
-              <i class="fa fa-sign-out" style="font-size: 20px;"></i>
-              <span class="menu-title" style="text-align: center; margin-left: 20%;color: white;font-family:'Times New Roman';font-style:italic ">&nbsp; Logout</span>
-             </a>
-          </li>
+ <ul>
+                <li>
+                <a href="request_Books_Admin.aspx">
+                    <span class="icon">
+                        <i class="fa fa-book"></i>
+                                        
+                    </span>
+                    <span class="item">Books</span>
+                </a>
+            </li>
 
+            <li>
+                <a href="Admin_category.aspx">
+                    <span class="icon">
+                        <i class="fa fa-briefcase"></i>
+                                        
+                    </span>
+                    <span class="item">Category</span>
+                </a>
+            </li>
 
+            <li>
+                <a href="UsersInadminDashboard.aspx">
+                    <span class="icon"><i class="fas fa-user-friends"></i></span>
+                    <span class="item">Users</span>
+                </a>
+            </li>
+            
+          
+            <li>
+                <a href="chartNew.aspx"  class="active">
+                    <span class="icon"><i class="fa fa-chart-line"></i></span>
+                    <span class="item">statistics</span>
+                </a>
+            </li>
+             
+        <li>
+                <a href="AdminOneTimeDono.aspx"  >
+                    <span class="icon">
+                        <i class="fa fa-briefcase"></i>                                   
+                    </span>
+                    <span class="item" style="font-size:14px" >One-Time Donations</span>
+                </a>
+            </li>
+            <li>
+              <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">
+                    <span class="icon"><i class="fa fa-power-off" aria-hidden="true"></i></span>
+                    <span class="item">Log out</span>
+                </asp:LinkButton>
+            </li>
         </ul>
-      </nav>
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row"<%-- style=" margin-right:-12px"--%>>
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body" >
-                  <h2 style="    text-align: center; font-size: xx-large; color:#49796b ; font-family:'Times New Roman'" >Statistics</h2>
-<%--                    <br />--%>
-                  
-                  <%--<div class="table-responsive">
-       
-        
-                         
-                  </div>--%>
-
-                </div>
-              </div>
-                
+    </div>
+    <div class="section" >
+        <div class="top_navbar">
+            <div class="hamburger">
+                <a href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
             </div>
+        </div>
 
-<%--             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--%>
+    </div>
+            <!--menu item-->
+        </div>
+        <div class="headertitle">
+                <h3>statistics</h3>
+        </div>
 
-               <div>
+        </div>
+        
+        <main>
+             <div class="con">
+
+            <div  id="batool" class="table table-striped" style="margin-top:50px" >
+        <div>
              <main class="py-6 bg-surface-secondary">
-          <div class="container-fluid">
+          <iv class="container-fluid">
               <!-- Card stats -->
               <div class="row g-6 mb-6">
-                  <div class="col-xl-3 col-sm-6 col-12 ">
-                      <div class="card shadow border-0" style="height: 110px">
+                  <div class="col-xl-3 col-sm-6 col-12">
+                      <div class="card shadow border-0">
                           <div class="card-body">
                               <div class="row">
                                   <div class="col">
@@ -167,7 +433,7 @@
                       </div>
                   </div>
                   <div class="col-xl-3 col-sm-6 col-12">
-                      <div class="card shadow border-0" style="height: 110px">
+                      <div class="card shadow border-0">
                           <div class="card-body">
                               <div class="row">
                                   <div class="col">
@@ -184,8 +450,8 @@
                       </div>
                   </div>
                   <br />
-                  <div class="col-xl-3 col-sm-6 col-12" >
-                      <div class="card shadow border-0" style="height: 110px">
+                  <div class="col-xl-3 col-sm-6 col-12">
+                      <div class="card shadow border-0">
                           <div class="card-body">
                               <div class="row">
                                   <div class="col" >
@@ -202,8 +468,8 @@
                           </div>
                       </div>
                   </div>
-                   <div class="col-xl-3 col-sm-6 col-12" >
-                      <div class="card shadow border-0" style="height: 110px">
+                   <div class="col-xl-3 col-sm-6 col-12">
+                      <div class="card shadow border-0">
                           <div class="card-body">
                               <div class="row">
                                   <div class="col">
@@ -220,10 +486,10 @@
                       </div>
                   </div>
                   <div class="col-xl-3 col-sm-6 col-12">
-                      <div class="card shadow border-0"style="height: 110px" >
+                      <div class="card shadow border-0">
                           <div class="card-body">
-                              <div class="row" >
-                                  <div class="col" style="height: 130px">
+                              <div class="row">
+                                  <div class="col">
                                       <span class="h6 font-semibold text-muted text-sm d-block mb-2"><h5>Number Of Categories</h5></span>
                                       <span class="h3 font-bold mb-0"> <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></span>
                                   </div>
@@ -232,30 +498,24 @@
                                           <i class="bi bi-list"></i>
                                       </div>
                                   </div>
+                                  </div>
                               </div>
                           </div>
                       </div>
                   </div>
-              </div>
-          </div>
-                
-
-      </main>
-        </div>
-   
-                <br />
-                <br />
-                <br />
-              </div>
-               
               
-          </div>
-        </div>
-         </div>
+      </main>
             
+        </div>
+                </div></div>
+              <script>
 
-
-           <script src="AdminCss/vendors/base/vendor.bundle.base.js"></script>
+                  var hamburger = document.querySelector(".hamburger");
+                  hamburger.addEventListener("click", function () {
+                      document.querySelector("body").classList.toggle("active");
+                  })
+              </script>
+          <script src="AdminCss/vendors/base/vendor.bundle.base.js"></script>
 <script src="AdminCss/js/off-canvas.js"></script>
   <script src="AdminCss/js/hoverable-collapse.js"></script>
   <script src="AdminCss/js/template.js"></script>
@@ -267,7 +527,7 @@
                  function successalert() {
                      swal({
                          title: 'Perfect Working',
-                         text: 'Your Book has been succesfully added',
+                         text: 'Your Category has been succesfully added',
                          type: 'success'
                      });
                  }
@@ -275,19 +535,19 @@
                  function successaler() {
                      swal({
                          title: 'Perfect Working',
-                         text: 'Your Book has been succesfully deleted',
+                         text: 'Your Category has been succesfully deleted',
                          type: 'success'
                      });
                  }
                  function successale() {
                      swal({
                          title: 'Perfect Working',
-                         text: 'Your Book has been succesfully updated',
+                         text: 'Your Category has been succesfully updated',
                          type: 'success'
                      });
                  }
              </script>
-     
+       
     </form>
 </body>
 </html>
